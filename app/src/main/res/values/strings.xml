@@ -1,0 +1,201 @@
+<resources>
+    <string name="app_name">National Park Reviews</string>
+    <string-array name="states_array">
+        <item>Alaska</item>
+        <item>American Samoa</item>
+        <item>Arizona</item>
+        <item>Arkansas</item>
+        <item>California</item>
+        <item>Colorado</item>
+        <item>Florida</item>
+        <item>Hawaii</item>
+        <item>Idaho</item>
+        <item>Kentucky</item>
+        <item>Indiana</item>
+        <item>Maine</item>
+        <item>Michigan</item>
+        <item>Minnesota</item>
+        <item>Missouri</item>
+        <item>Montana</item>
+        <item>Nevada</item>
+        <item>New Mexico</item>
+        <item>North Dakota</item>
+        <item>North Carolina</item>
+        <item>Ohio</item>
+        <item>Oregon</item>
+        <item>South Carolina</item>
+        <item>South Dakota</item>
+        <item>Tennessee</item>
+        <item>Texas</item>
+        <item>Utah</item>
+        <item>Virgin Islands</item>
+        <item>Virginia</item>
+        <item>Washington</item>
+        <item>West Virginia</item>
+        <item>Wyoming</item>
+    </string-array>
+
+    <string-array name="alaska">
+        <item>Denali National Park</item>
+        <item>Gates of the Arctic National Park</item>
+        <item>Glacier Bay National Park</item>
+        <item>Katmai National Park</item>
+        <item>Kenai Fjords National Park</item>
+        <item>Kobuk Valley National Park</item>
+        <item>Lake Clark National Park</item>
+        <item>Wrangell-St. Elias National Park</item>
+    </string-array>
+
+    <string-array name="american_samoa">
+        <item>National Park of American Samoa</item>
+    </string-array>
+
+    <string-array name="arizona">
+        <item>Grand Canyon National Park</item>
+        <item>Petrified Forest National Park</item>
+        <item>Saguaro National Park</item>
+    </string-array>
+
+    <string-array name="arkansas">
+        <item>Hot Springs National Park</item>
+    </string-array>
+
+    <string-array name="california">
+        <item>Channel Islands National Park</item>
+        <item>Death Valley National Park</item>
+        <item>Joshua Tree National Park</item>
+        <item>Kings Canyon National Park</item>
+        <item>Lassen Volcanic National Park</item>
+        <item>Pinnacles National Park</item>
+        <item>Redwood National Park</item>
+        <item>Sequoia National Park</item>
+        <item>Yosemite National Park</item>
+    </string-array>
+
+    <string-array name="colorado">
+        <item>Black Canyon of the Gunnison National Park</item>
+        <item>Great Sand Dunes National Park</item>
+        <item>Mesa Verde National Park</item>
+        <item>Rocky Mountain National Park</item>
+    </string-array>
+
+    <string-array name="florida">
+        <item>Biscayne National Park</item>
+        <item>Dry Tortugas National Park</item>
+        <item>Everglades National Park</item>
+    </string-array>
+
+    <string-array name="hawaii">
+        <item>Haleakala National Park</item>
+        <item>Hawai’i Volcanoes National Park</item>
+    </string-array>
+
+    <string-array name="idaho">
+        <item>Yellowstone National Park</item>
+    </string-array>
+
+    <string-array name="kentucky">
+        <item>Mammoth Cave National Park</item>
+    </string-array>
+
+    <string-array name="indiana">
+        <item>Indiana Dunes National Park</item>
+    </string-array>
+
+    <string-array name="maine">
+        <item>Acadia National Park</item>
+    </string-array>
+
+    <string-array name="michigan">
+        <item>Isle Royale National Park</item>
+    </string-array>
+
+    <string-array name="minnesota">
+        <item>Voyageurs National Park</item>
+    </string-array>
+
+    <string-array name="missouri">
+        <item>Gateway Arch National Park</item>
+    </string-array>
+
+    <string-array name="montana">
+        <item>Glacier National Park</item>
+        <item>Yellowstone National Park</item>
+    </string-array>
+
+    <string-array name="nevada">
+        <item>Death Valley National Park</item>
+        <item>Great Basin National Park</item>
+    </string-array>
+
+    <string-array name="new_mexico">
+        <item>Carlsbad Caverns National Park</item>
+        <item>White Sands National Park</item>
+    </string-array>
+
+    <string-array name="north_dakota">
+        <item>Gateway Arch National Park</item>
+    </string-array>
+
+    <string-array name="north_carolina">
+        <item>Great Smoky Mountains National Park</item>
+    </string-array>
+
+    <string-array name="ohio">
+        <item>Cuyahoga Valley National Park</item>
+    </string-array>
+
+    <string-array name="oregon">
+        <item>Crater Lake National Park</item>
+    </string-array>
+
+    <string-array name="south_carolina">
+        <item>Congaree National Park</item>
+    </string-array>
+
+    <string-array name="south_dakota">
+        <item>Badlands National Park</item>
+        <item>Wind Cave National Park</item>
+    </string-array>
+
+    <string-array name="tennessee">
+        <item>Great Smoky Mountains National Park</item>
+    </string-array>
+
+    <string-array name="texas">
+        <item>Big Bend National Park</item>
+        <item>Guadalupe Mountains National Park</item>
+    </string-array>
+
+    <string-array name="utah">
+        <item>Arches National Park</item>
+        <item>Bryce Canyon National Park</item>
+        <item>Canyonlands National Park</item>
+        <item>Capitol Reef National Park</item>
+        <item>Zion National Park</item>
+    </string-array>
+
+    <string-array name="virgin_islands">
+        <item>Virgin Islands National Park</item>
+    </string-array>
+
+    <string-array name="virginia">
+        <item>Shenandoah National Park</item>
+    </string-array>
+
+    <string-array name="washington">
+        <item>Mount Rainier National Park</item>
+        <item>North Cascades National Park</item>
+        <item>Olympic National Park</item>
+    </string-array>
+
+    <string-array name="west_virginia">
+        <item>New River Gorge National Park</item>
+    </string-array>
+
+    <string-array name="wyoming">
+        <item>Grand Teton National Park</item>
+        <item>Yellowstone National Park</item>
+    </string-array>
+
+</resources>
