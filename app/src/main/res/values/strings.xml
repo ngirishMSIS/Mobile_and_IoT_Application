@@ -198,4 +198,22 @@
         <item>Yellowstone National Park</item>
     </string-array>
 
+    <string-array name="usernames">
+        <item>Alice</item>
+        <item>Bob</item>
+        <item>Mallory</item>
+    </string-array>
+
+    <string-array name="ratings">
+        <item>4.5</item>
+        <item>5</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="reviews">
+        <item>Very good park!</item>
+        <item>Loved it! Must visit!</item>
+        <item>Could be better. Try the next state.</item>
+    </string-array>
+
 </resources>
