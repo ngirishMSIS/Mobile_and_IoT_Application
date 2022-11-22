@@ -47,12 +47,9 @@ public class Results extends AppCompatActivity {
                         }
                         String rat = data.getStringExtra("rating");
                         String rev= data.getStringExtra("review");
-                        TextView sample =  findViewById(R.id.usernameResult);
-                        sample.setText(rev);
 
                         //populateReviewList(usernames, ratings, reviews);
                         Review newly = new Review(username, rat, rev);
-
 
                         reviewList.add(newly);
 
