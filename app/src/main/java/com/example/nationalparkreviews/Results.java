@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -19,7 +20,15 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FieldPath;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,9 +38,12 @@ public class Results extends AppCompatActivity {
     TextView user, state, rating;
     Button addButton;
     ListView listView;
-    public String username;
+    public String username, rate;
     private ArrayList<Review> reviewList;
-    public int LAUNCH_SECOND_ACTIVITY = 1;
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
     public ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
@@ -65,20 +77,37 @@ public class Results extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.results);
-
         user = findViewById(R.id.usernameResult);
         state = findViewById(R.id.stateResult);
-
         Intent intent = getIntent();
+        String st = intent.getStringExtra("State").toLowerCase().replace(" ", "_").replace("-", "_").trim();
+        String temp = intent.getStringExtra("Park");
+        String park_temp = temp.substring(0, temp.length() - 14).toLowerCase().replace(" ", "_").replace("-", "_").trim();
+        System.out.println(park_temp);
+        db.collection(st)
+                .whereEqualTo(FieldPath.documentId(), park_temp)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                rate = "Rating: " + document.getData().get("rating");
+                                System.out.println(rate);
+                                rating = findViewById(R.id.rating);
+                                rating.setText(rate);
+                            }
+                        }
+                    }
+                });
+
         username = intent.getStringExtra("Username");
         String welcome = "Welcome " + username + "!";
         String parkName = intent.getStringExtra("Park") + ", " + intent.getStringExtra("State");
         user.setText(welcome);
         state.setText(parkName);
 
-        rating = findViewById(R.id.rating);
-        String rate = "Rating: 4.5/5";
-        rating.setText(rate);
+
 
         reviewList = new ArrayList<>();
         Resources res = getResources();
@@ -105,35 +134,6 @@ public class Results extends AppCompatActivity {
             }
         });
     }
-
-    /*@Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == LAUNCH_SECOND_ACTIVITY) {
-            if(resultCode == Activity.RESULT_OK){
-                reviewList = new ArrayList<>();
-                //Resources res = getResources();
-                Intent intent = getIntent();
-                String username = intent.getStringExtra("Username");
-                String rating = data.getStringExtra("rating");
-                String review = data.getStringExtra("review");
-
-                //populateReviewList(usernames, ratings, reviews);
-
-                reviewList.add(new Review(username,rating,review));
-
-                reviewAdapter adapter = new reviewAdapter(Results.this, R.layout.list_item, reviewList);
-
-                listView = findViewById(R.id.listView);
-
-                listView.setAdapter(adapter);
-            }
-            if (resultCode == Activity.RESULT_CANCELED) {
-                    // Write your code if there's no result
-            }
-        }
-    }*/
 
     public void populateReviewList(String[] usernames,String[] ratings, String[] reviews ){
         reviewList.add(new Review(usernames[0],ratings[0],reviews[0]));
